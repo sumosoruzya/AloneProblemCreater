@@ -24,5 +24,18 @@ namespace AloneProblemCreater
 		{
 			InitializeComponent();
 		}
+
+		private void output_button_Click(object sender, RoutedEventArgs e)
+		{
+			if (output_name.GetLineLength(0) != 0)
+			{
+				AlonePloblemCreater apc = new AlonePloblemCreater(output_name.Text.Replace(".csv", ""));
+				apc.createProblem();
+			}
+			else
+			{
+				output_name.Text = "Error!!";
+			}
+		}
 	}
 }
