@@ -19,7 +19,7 @@ namespace AloneProblemCreater
 		}
 
 		public void createProblem(){
-			
+            Console.Write(file_name + ":" + output_num + "\r");
 		}
 	}
 }

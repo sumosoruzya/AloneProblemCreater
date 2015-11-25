@@ -30,6 +30,10 @@ namespace AloneProblemCreater
 
         private void output_button_Click(object sender, RoutedEventArgs e)
         {
+            num = int.Parse(output_num.Text);
+            if (num > 100000) num = 100000;
+            else if (num < 1) num = 1;
+
             if (output_name.GetLineLength(0) != 0)
             {
                 AlonePloblemCreater apc = new AlonePloblemCreater(output_name.Text.Replace(".csv", ""), num);
@@ -44,7 +48,7 @@ namespace AloneProblemCreater
 
         private void num_up_Click(object sender, RoutedEventArgs e)
         {
-            if (num < 100001)
+            if (num < 100000)
             {
                 num++;
                 output_num.Text = num.ToString();
@@ -53,7 +57,7 @@ namespace AloneProblemCreater
 
         private void num_down_Click(object sender, RoutedEventArgs e)
         {
-            if (num > 0)
+            if (num > 1)
             {
                 num--;
                 output_num.Text = num.ToString();
@@ -74,6 +78,8 @@ namespace AloneProblemCreater
             else
             {
                 num = int.Parse(output_num.Text);
+                if (num > 100000) num = 100000;
+                else if (num < 1) num = 1;
             }
             
         }
