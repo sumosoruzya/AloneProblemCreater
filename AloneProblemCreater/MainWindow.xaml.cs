@@ -62,12 +62,20 @@ namespace AloneProblemCreater
 
         private void output_num_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            bool yes_parse = false;
+            if(e.Text.ToString() != "\r")
+            {
+                bool yes_parse = false;
 
-            float xx;
-            var tmp = output_num.Text + e.Text;
-            yes_parse = Single.TryParse(tmp, out xx);
-            e.Handled = !yes_parse;
+                float xx;
+                var tmp = output_num.Text + e.Text;
+                yes_parse = Single.TryParse(tmp, out xx);
+                e.Handled = !yes_parse;
+            }
+            else
+            {
+                num = int.Parse(output_num.Text);
+            }
+            
         }
     }
 }
